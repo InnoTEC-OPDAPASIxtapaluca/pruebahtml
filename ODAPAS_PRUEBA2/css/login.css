@@ -1,0 +1,921 @@
+/* css/index.css - VERSION RESPONSIVE MEJORADA */
+
+/* RESET Y CONFIGURACIONES GLOBALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8f5f0 0%, #f0ece5 100%);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* FONDO CON PATRÓN SUTIL DE AGUA */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23691a30' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* TARJETA PRINCIPAL - DISEÑO VIP */
+.login-container {
+    background: white;
+    border-radius: 28px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 
+        0 25px 70px rgba(105, 26, 48, 0.12),
+        0 5px 20px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    display: grid;
+    grid-template-columns: 42% 58%;
+    min-height: 780px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* PANEL IZQUIERDO - DISEÑO PREMIUM */
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 42%;
+    height: 100%;
+    background: 
+        linear-gradient(145deg, #691a30 0%, #8a1c3a 100%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23bb9358' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-blend-mode: overlay;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+}
+
+.header {
+    position: relative;
+    z-index: 2;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* TÍTULO CON ESTILO VRGAS */
+.title {
+    color: #fff;
+    font-size: 3.8rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    line-height: 1.05;
+    position: relative;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: -0.5px;
+    margin-top: 40px; /* ESPACIO PARA EL BADGE */
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100px;
+    height: 5px;
+    background: #bb9358;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(187, 147, 88, 0.4);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-top: 40px;
+    font-weight: 300;
+    max-width: 380px;
+    padding-left: 10px;
+    border-left: 3px solid rgba(187, 147, 88, 0.5);
+}
+
+/* BADGE INSTITUCIONAL - CORREGIDO */
+.header::before {
+    content: 'SISTEMA DE CONTROL';
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    background: rgba(187, 147, 88, 0.15);
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: 1px solid rgba(187, 147, 88, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 3;
+    width: auto;
+    white-space: nowrap;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ICONO DE AGUA ANIMADO */
+.header::after {
+    content: '💧';
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    font-size: 5rem;
+    opacity: 0.1;
+    animation: waterDrop 4s ease-in-out infinite;
+}
+
+@keyframes waterDrop {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+/* PANEL DERECHO - FORMULARIO PREMIUM */
+.login-form {
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #fcfbf9 100%);
+}
+
+/* DISTRIBUCIÓN MEJORADA DE CAMPOS - AHORA CON MÁS ESPACIO */
+.form-fields-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    margin-bottom: 50px;
+}
+
+/* ESTILO VIP PARA LOS GRUPOS */
+.form-group {
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    border: 2px solid #f0ece5;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+.form-group:hover {
+    border-color: #e8dfd0;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+}
+
+.form-group:focus-within {
+    border-color: #bb9358;
+    box-shadow: 0 0 0 4px rgba(187, 147, 88, 0.1);
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #691a30;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.form-group label i {
+    color: #bb9358;
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* SELECT MEJORADO */
+.select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.select-wrapper select {
+    width: 100%;
+    padding: 18px 24px;
+    background: #f8f7f5;
+    border: 2px solid #e8e4dd;
+    border-radius: 12px;
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: 500;
+    appearance: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.select-wrapper select:focus {
+    outline: none;
+    border-color: #bb9358;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(187, 147, 88, 0.1);
+}
+
+.select-icon {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bb9358;
+    pointer-events: none;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.select-wrapper:hover .select-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* INPUTS PREMIUM */
+.input-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-with-icon i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bb9358;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.input-with-icon .icon-left {
+    left: 22px;
+}
+
+.input-with-icon .icon-right {
+    right: 22px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.input-with-icon .icon-right:hover {
+    color: #691a30;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 18px 24px 18px 56px;
+    background: #f8f7f5;
+    border: 2px solid #e8e4dd;
+    border-radius: 12px;
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+}
+
+.input-with-icon input:focus {
+    outline: none;
+    border-color: #bb9358;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(187, 147, 88, 0.1);
+    padding-left: 58px;
+}
+
+.input-with-icon input::placeholder {
+    color: #aaa;
+    font-weight: normal;
+}
+
+.input-with-icon:focus-within .icon-left {
+    left: 26px;
+    color: #691a30;
+}
+
+/* BOTÓN CON ESTILO VRGAS */
+.buttons-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 40px;
+    border-top: 1px solid #f0ece5;
+    position: relative;
+}
+
+.btn {
+    padding: 22px 50px;
+    border: none;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    letter-spacing: 0.8px;
+    position: relative;
+    overflow: hidden;
+    min-width: 320px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: linear-gradient(145deg, #691a30 0%, #8a1c3a 100%);
+    color: white;
+    box-shadow: 
+        0 15px 35px rgba(105, 26, 48, 0.25),
+        0 5px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 45px rgba(105, 26, 48, 0.35),
+        0 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(145deg, #7a1e38 0%, #9b2142 100%);
+}
+
+.btn-primary:active {
+    transform: translateY(-2px);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.15), 
+        transparent);
+    transition: left 0.7s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary i {
+    font-size: 1.3rem;
+    transition: transform 0.4s ease;
+}
+
+.btn-primary:hover i {
+    transform: translateX(8px) scale(1.1);
+}
+
+/* MENSAJES DE ERROR CON ESTILO */
+.error-message {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    min-height: 20px;
+    font-weight: 500;
+    padding: 8px 12px;
+    background: rgba(231, 76, 60, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #e74c3c;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ANIMACIONES VIP */
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+
+/* EFECTO DE BRILLO EN EL BORDE DEL CONTENEDOR */
+.login-container {
+    position: relative;
+}
+
+.login-container::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: linear-gradient(45deg, 
+        transparent, 
+        rgba(187, 147, 88, 0.1), 
+        rgba(105, 26, 48, 0.1), 
+        transparent);
+    border-radius: 29px;
+    z-index: -1;
+    animation: borderFlow 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes borderFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* BADGE DE SEGURIDAD */
+.buttons-container::before {
+    content: '🔐 Acceso Seguro SSL';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #691a30;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid #e8e4dd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* =============================================== */
+/* RESPONSIVE DESIGN MEJORADO - SOLUCION CORREGIDA */
+/* =============================================== */
+
+/* 1. PARA PANTALLAS GRANDES (más de 1200px) - Ya está configurado */
+
+/* 2. PARA TABLETS GRANDES (992px - 1200px) */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 95%;
+    }
+    
+    .login-container {
+        grid-template-columns: 45% 55%;
+        min-height: 700px;
+    }
+    
+    .login-container::before {
+        width: 45%;
+        clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+    
+    .header {
+        padding: 60px 40px;
+    }
+    
+    .title {
+        font-size: 3.2rem;
+        margin-top: 35px;
+    }
+    
+    .header::before {
+        top: 40px;
+        left: 40px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .header::after {
+        font-size: 4rem;
+        bottom: 40px;
+        right: 40px;
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+        max-width: 350px;
+    }
+    
+    .login-form {
+        padding: 60px 40px;
+    }
+    
+    .form-fields-container {
+        gap: 30px;
+    }
+    
+    .btn {
+        min-width: 300px;
+        padding: 20px 45px;
+    }
+}
+
+/* 3. PARA TABLETS (768px - 992px) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 90%;
+        padding: 10px;
+    }
+    
+    .login-container {
+        grid-template-columns: 50% 50%;
+        min-height: 650px;
+    }
+    
+    .login-container::before {
+        width: 50%;
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+    
+    .header {
+        padding: 50px 30px;
+    }
+    
+    .title {
+        font-size: 2.8rem;
+        margin-top: 50px; /* Más espacio para el badge */
+    }
+    
+    .title::after {
+        width: 80px;
+        height: 4px;
+    }
+    
+    .header::before {
+        top: 30px;
+        left: 30px;
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        max-width: 85%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    
+    .header::after {
+        font-size: 3.5rem;
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        max-width: 320px;
+        margin-top: 30px;
+    }
+    
+    .login-form {
+        padding: 50px 30px;
+    }
+    
+    .form-fields-container {
+        gap: 25px;
+    }
+    
+    .form-group {
+        padding: 20px;
+    }
+    
+    .select-wrapper select,
+    .input-with-icon input {
+        padding: 16px 20px 16px 50px;
+        font-size: 1rem;
+    }
+    
+    .input-with-icon .icon-left {
+        left: 20px;
+    }
+    
+    .btn {
+        min-width: 280px;
+        padding: 18px 40px;
+        font-size: 1.1rem;
+    }
+}
+
+/* 4. PARA MÓVILES GRANDES Y TABLETS PEQUEÑAS (600px - 768px) */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .login-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        min-height: auto;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    /* CORRECCIÓN: Panel izquierdo arriba */
+    .login-container::before {
+        width: 100%;
+        height: 300px;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        border-radius: 28px 28px 0 0;
+    }
+    
+    .header {
+        padding: 40px 30px;
+        height: 300px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+        margin-top: 60px; /* Espacio suficiente para el badge */
+        text-align: center;
+    }
+    
+    .title::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70px;
+    }
+    
+    /* CORRECCIÓN: Badge centrado y con buen margen */
+    .header::before {
+        top: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 18px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        width: auto;
+        max-width: 90%;
+    }
+    
+    .header::after {
+        display: block;
+        font-size: 3rem;
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .subtitle {
+        text-align: center;
+        border-left: none;
+        border-top: 3px solid rgba(187, 147, 88, 0.5);
+        padding-left: 0;
+        padding-top: 15px;
+        margin: 25px auto 0;
+        max-width: 90%;
+    }
+    
+    .login-form {
+        padding: 40px 30px;
+    }
+    
+    .form-fields-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .btn {
+        min-width: 100%;
+        max-width: 300px;
+        padding: 16px 35px;
+        font-size: 1rem;
+    }
+}
+
+/* 5. PARA MÓVILES MEDIANOS (480px - 600px) */
+@media (max-width: 600px) {
+    .header {
+        padding: 30px 20px;
+        height: 280px;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+        margin-top: 50px;
+    }
+    
+    .header::before {
+        top: 20px;
+        padding: 7px 15px;
+        font-size: 0.7rem;
+    }
+    
+    .header::after {
+        font-size: 2.5rem;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+        padding-top: 12px;
+        margin-top: 20px;
+    }
+    
+    .login-form {
+        padding: 30px 20px;
+    }
+    
+    .form-group {
+        padding: 18px;
+    }
+    
+    .select-wrapper select,
+    .input-with-icon input {
+        padding: 14px 18px 14px 48px;
+        font-size: 0.95rem;
+    }
+    
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* 6. PARA MÓVILES PEQUEÑOS (menos de 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .login-container {
+        border-radius: 20px;
+    }
+    
+    .login-container::before {
+        height: 260px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .header {
+        height: 260px;
+        padding: 25px 15px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        margin-top: 45px;
+    }
+    
+    .header::before {
+        top: 15px;
+        padding: 6px 12px;
+        font-size: 0.65rem;
+        max-width: 85%;
+    }
+    
+    .header::after {
+        font-size: 2rem;
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+        padding-top: 10px;
+    }
+    
+    .login-form {
+        padding: 25px 15px;
+    }
+    
+    .form-group {
+        padding: 15px;
+    }
+    
+    .select-wrapper select,
+    .input-with-icon input {
+        padding: 12px 16px 12px 44px;
+        font-size: 0.9rem;
+    }
+    
+    .input-with-icon .icon-left {
+        left: 16px;
+    }
+    
+    .btn {
+        padding: 14px 25px;
+        font-size: 0.9rem;
+    }
+    
+    /* Badge de seguridad ajustado */
+    .buttons-container::before {
+        font-size: 0.7rem;
+        padding: 5px 15px;
+    }
+}
+
+/* 7. PARA DISPOSITIVOS MUY PEQUEÑOS (menos de 360px) */
+@media (max-width: 360px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .header::before {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+    }
+    
+    .header::after {
+        font-size: 1.8rem;
+    }
+    
+    .subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .select-wrapper select,
+    .input-with-icon input {
+        padding: 10px 14px 10px 40px;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 8. PARA DISPOSITIVOS EN ORIENTACIÓN HORIZONTAL (landscape) */
+@media (max-height: 600px) and (orientation: landscape) {
+    .login-container {
+        min-height: auto;
+        max-height: 95vh;
+        overflow-y: auto;
+    }
+    
+    .header {
+        padding: 30px 40px;
+        height: auto;
+    }
+    
+    .login-form {
+        padding: 30px 40px;
+    }
+    
+    .form-fields-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .form-group {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>OPDAPAS - Dashboard Jefe</title>
+    <link rel="stylesheet" href="css/dashboard-jefe.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header principal -->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="logo-section">
+                <div class="logo-main">
+                    <h1 class="logo-title">OPDAPAS</h1>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                <div class="logos-container">
+                    <img src="imagenes/logo1.png" alt="Logo 1" class="logo-img">
+                    <img src="imagenes/logo2.png" alt="Logo 2" class="logo-img">
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="user-greeting">
+                    <i class="fas fa-user-circle"></i>
+                    <span>BIENVENIDO: <strong id="username">Jefe de Departamento</strong></span>
+                </div>
+                <button class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i> <span class="logout-text">Salir</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Menú de opciones secundarias -->
+        <nav class="secondary-menu" id="secondaryMenu">
+            <ul>
+                <li><a href="#" class="menu-link"><i class="fas fa-chart-line"></i> <span>PRUEBA DASHBOARD</span></a></li>
+                <li><a href="#" class="menu-link"><i class="fas fa-home"></i> <span>INICIO</span></a></li>
+                <li><a href="#" class="menu-link"><i class="fas fa-info-circle"></i> <span>INFOGO</span></a></li>
+                <li><a href="#" class="menu-link active"><i class="fas fa-tachometer-alt"></i> <span>DASHBOARD</span></a></li>
+                <li><a href="#" class="menu-link"><i class="fas fa-history"></i> <span>DASHBOARD VIEJAS PIPAS</span></a></li>
+                <li><a href="#" class="menu-link"><i class="fas fa-fire"></i> <span>REPORTES FUEGOS E INUNDACIONES</span></a></li>
+                <li><a href="#" class="menu-link"><i class="fas fa-map"></i> <span>MAPAS DE INUNDACIONES</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="dashboard-main">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2><i class="fas fa-water"></i> <span>SISTEMA DE CONTROL HÍDRICO</span></h2>
+                <p class="dashboard-subtitle">Seleccione un módulo para acceder a su información detallada</p>
+            </div>
+            
+            <!-- Grid de opciones principales -->
+            <div class="options-grid" id="optionsGrid">
+                <!-- Las opciones se generan dinámicamente con JavaScript -->
+            </div>
+            
+            <!-- Paginación para móviles -->
+            <div class="mobile-pagination">
+                <button class="page-btn" id="prevPage"><i class="fas fa-chevron-left"></i></button>
+                <span class="page-info">Página <span id="currentPage">1</span> de <span id="totalPages">4</span></span>
+                <button class="page-btn" id="nextPage"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <p>© 2026 OPDAPAS - Sistema de Control Hídrico. Todos los derechos reservados.</p>
+            <p class="footer-security">
+                <i class="fas fa-shield-alt"></i> <span>Sistema Seguro</span> | 
+                <i class="fas fa-sync-alt"></i> <span>Actualizado en tiempo real</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal móvil para menú -->
+    <div class="mobile-menu-modal" id="mobileMenuModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Menú de Navegación</h3>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-menu">
+                <a href="#" class="modal-menu-item"><i class="fas fa-chart-line"></i> PRUEBA DASHBOARD</a>
+                <a href="#" class="modal-menu-item"><i class="fas fa-home"></i> INICIO</a>
+                <a href="#" class="modal-menu-item"><i class="fas fa-info-circle"></i> INFOGO</a>
+                <a href="#" class="modal-menu-item active"><i class="fas fa-tachometer-alt"></i> DASHBOARD</a>
+                <a href="#" class="modal-menu-item"><i class="fas fa-history"></i> DASHBOARD VIEJAS PIPAS</a>
+                <a href="#" class="modal-menu-item"><i class="fas fa-fire"></i> REPORTES FUEGOS E INUNDACIONES</a>
+                <a href="#" class="modal-menu-item"><i class="fas fa-map"></i> MAPAS DE INUNDACIONES</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard-jefe.js"></script>
+</body>
+</html>
